@@ -1,0 +1,14 @@
+ScientificFunctions
+===================
+
+This plugin contains a function that converts to number to a specified number of significant digits.  This IS NOT the same as rounding.
+
+
+Example
+=======
+
+"8833423".sigfigs(3) = "8830000"
+"0.00003442".sigfigs(2) = "0.000034"
+
+
+Copyright (c) 2010 Matthew Wilson, released under the MIT license
