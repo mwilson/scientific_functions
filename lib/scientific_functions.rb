@@ -10,6 +10,10 @@ class String
     if value[3] > 0
       result.gsub!(".0","")
     end
+    if (result.length < num_places) && (result.to_f >= 1) && (result.index(".").nil?)
+      result = result << "."
+      result = result.ljust(num_places + 1, "0")
+    end
     return result
   end
 end
