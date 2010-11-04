@@ -8,5 +8,5 @@ end
 
 Then /^I should get a result of (.*)$/ do |x|
   result = @number.sigfigs(@sigfigs)
-  result == x
+  assert_equal result, x
 end
