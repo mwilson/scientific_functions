@@ -8,9 +8,16 @@ Usage
     "7.2234".sigfigs(3)     =  "7.22"
     "0.00034423".sigfigs(4) =  "0.0003442"
 
-Example
-=======
+Tests
+=====
+Feature: Displaying Significant Figures
+   
+    Scenario Outline: Returning numbers with the correct number of signficant figures
+     Given a number <number>
+     And  an amount of sigfigs, <sigfigs>
+     Then I should get a result of <result>
 
+     Scenarios: Different numbers
      | number    | sigfigs     | result     |
      | 5         | 3           |  5.00      |
      | 52334     | 4           |  52330     |
@@ -21,7 +28,7 @@ Example
      | 520.334   | 4           |  520.3     |
      | 520.334   | 5           |  520.33    |
      | 520.334   | 3           |  520       |
-     | 520.334   | 2           |  500       |
+     | 520.334   | 2           |  520       |
      | 7.003     | 3           |  7.00      |
      | 7.003     | 4           |  7.003     |
      | -5        | 3           |  -5.00     |
@@ -33,7 +40,7 @@ Example
      | -520.334  | 4           |  -520.3    |
      | -520.334  | 5           |  -520.33   |
      | -520.334  | 3           |  -520      |
-     | -520.334  | 2           |  -500      |
+     | -520.334  | 2           |  -520      |
      | -7.003    | 3           |  -7.00     |
      | -7.003    | 4           |  -7.003    |
      | 8.003     | 6           |  8.00300   |
@@ -43,5 +50,9 @@ Example
      | 52.01     | 4           |  52.01     |
      | 52.01     | 5           |  52.010    |
      | -52.01    | 4           | -52.01     |
+     | 0.025     | 3           | 0.0250     | 
+     | -0.025    | 4           | -0.02500   |
+     | 0.26174   | 3           | 0.262      |
+     | -0.26174  | 3           | -0.262     |
 
 Copyright (c) 2010 Matthew Wilson, released under the MIT license
